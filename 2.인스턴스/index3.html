@@ -1,0 +1,23 @@
+<!doctype>
+<html lang="ko">
+<head>
+    
+</head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var data = { a : 1 }
+            var vm = new Vue({
+                el: '#example',
+                data: data
+            })
+
+            vm.$data === data //true
+            vm.$el === document.getElementById('example') //true
+
+            vm.$watch('a', function(newVal, oldVal){
+                //'vm.a'가 변경되면 호출된다.
+            })
+        </script>
+    </body>
+</html>

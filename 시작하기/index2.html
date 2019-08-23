@@ -1,0 +1,26 @@
+<!doctype>
+<html lang="ko">
+<head>
+    
+</head>
+    <body>
+        <div id="app">
+            <span v-bind:title="message"> <!-- v-bind 속성은 디렉티브라고 한다. 디렉티브는 Vue에서 제공하는 특수 속성임을 나타내는 v-접두어가 붙어있으며 사용자가 짐작할 수 있듯 렌더링-->
+                                          <!-- DOM에 특수한 반응형 동작을 한다. -->
+                마우스를 올리면 동적으로 바인딩 된 title을 볼 수 있다. 
+            </span>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+            el: '#app',
+            data: {
+                    message: '이 페이지는 ' + new Date() + ' 에 로드되었다'
+                  }
+            })
+        </script>
+    </body>
+</html>

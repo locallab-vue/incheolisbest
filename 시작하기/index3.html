@@ -1,0 +1,24 @@
+<!doctype>
+<html lang="ko">
+<head>
+    <title>조건문과 반복문</title>
+</head>
+    <body>
+        <div id="app">
+            <p v-if="seen">이제 나를 볼 수 있슴</p>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+            el: '#app',
+            data: {
+                    seen: true,
+                    seen: false
+                  }
+            })
+        </script>
+    </body>
+</html>

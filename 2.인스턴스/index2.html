@@ -1,0 +1,28 @@
+<!doctype>
+<html lang="ko">
+<head>
+    
+</head>
+    <body>
+        <div id="app">
+            <p>{{foo}}</p>
+            <button v-on:click="foo = 'baz'"> Change it</button>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var obj = {
+                foo : 'bar'
+            }
+
+            Object.freeze(obj) // 기존 속성이 변경되는 것을 막아 반응성 시스템이 추적할 수 없도록 한다. 
+
+            new Vue({
+                el: '#app',
+                data:obj
+            })
+        </script>
+    </body>
+</html>

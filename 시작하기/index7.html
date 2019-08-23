@@ -1,0 +1,41 @@
+<!doctype>
+<html lang="ko">
+<head>
+    <title>조건문과 반복문</title>
+</head>
+    <body>
+        <div id="app">
+            <ol>
+                <!-- 
+                    이제 화면에 todo-item에 todo 객체를 제공한다.
+                    화면에 나오므로, 각 항목의 컨텐츠는 동적으로 바뀔 수 있따.
+                    또한 각 구성 요소에 "키"를 제공해야한다. 
+                -->
+                <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">                    
+                </todo-item>
+            </ol>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            Vue.component('todo-item',{
+                props: ['todo'],
+                template: '<li>{{todo.text}}</li>' 
+            })   //자식을 props 인터페이스를 통하여 부모로 부터 합리적인 수준으로 분리할 수 있다. 이제 부모 앱에 영향을 주지 않으면서 <todo-item> 컴포넌트를 더 복잡한 템플릿과 
+                 //로직으로 더욱 향상시킬 수 있을 것이다.
+
+            var app = new Vue({
+            el: '#app',
+            data: {
+                    groceryList: [
+                        { id:0, text: 'Vegetables'},
+                        { id:1, text: 'Cheese'},
+                        { id:2, text: 'Whatever else'},                        
+                    ]
+                }
+            })
+        </script>
+    </body>
+</html>

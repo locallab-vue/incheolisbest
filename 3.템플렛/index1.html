@@ -1,0 +1,25 @@
+<!doctype>
+<html lang="ko">
+<head>
+    
+</head>
+    <body>
+        <!--
+            Vue.js는 렌더링된 Dom을 기본 Vue 인스턴스의 데이터에 선언적으로 바인딩할 수 있는 HTML 기반 템플릿 구문을 사용한다. 
+            내부적으로 Vue는 템플릿을 가상 DOM렌더링 함수로 컴파일 한다. 
+            반응형 시스템과 결합된 Vue는 앱 상태가 변경될 떄 최소한으로 DOM을 조작하고 다시 적용할 수 있는 최소한의 컴포넌트를 
+            지능적으로 파악할 수 있다. 
+        -->
+        <div v-bind:id="dynamicId"></div>
+        <button v-bind:disables="isButtonDisabled">Button</button>
+        <a v:bind:href="url">....</a>
+        <a :href="url"></a></a>
+
+        <a v-on:click="doSomething">....</a>
+        <a @click="doSomething"></a>
+        <form v-on:submit.prevent="onSubit"></form>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    </body>
+</html>

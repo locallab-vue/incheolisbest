@@ -1,0 +1,38 @@
+<!doctype>
+<html lang="ko">
+<head>
+    
+</head>
+    <body>
+        <div id="app">
+            <p>원본 메시지 : {{message}}</p>
+            <p>역순으로 표시한 메시지: {{reversedMessage}}</p>
+            <p>역순으로 표시한 메시지: {{reversedMessage()}}</p>
+            
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: '반가워'
+                },
+                computed: { //이 값은 항상 message 값에 의존함, 즉 message값이 바뀌면 이 컴포티드의 결과값도 달라질 것임 
+                    reversedMessage: function(){
+                        return this.message.split('').reverse().join('')
+                    }
+                },
+                method: {
+                    reversedMessage: function() {
+                        return this.message.split('').reverse().join('')
+                    }
+                }  //메소드로 표시할 수도 있는데 다만 차이점은 computed의 경우 message값이 바뀌지 않는 한 캐싱처리되어 함수가 다시 실행되는 일이 없다. 
+                
+            
+            })
+        </script>
+    </body>
+</html>

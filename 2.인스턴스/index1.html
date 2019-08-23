@@ -1,0 +1,23 @@
+<!doctype>
+<html lang="ko">
+<head>
+    
+</head>
+    <body>
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var data = {a : 1 }
+            var vm = new Vue({
+                data:data
+            })
+            vm.a === data.a // 같은 객체를 참조한다.  
+            vm.a = 2
+            data.a // => 2 원본 데이터에 영향을 줌 그냥 써도 오류가 없네? 데이터가 변경되도 화면이 갱신되지 않는다.  
+            document.write(data.a)
+        </script>
+    </body>
+</html>
